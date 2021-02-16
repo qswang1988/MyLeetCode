@@ -2,7 +2,9 @@ package greedy.four_o_six;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Solution {
     public static void main(String[] args) {
@@ -10,7 +12,19 @@ public class Solution {
                     // [[5,0],[7,0],[5,2],[6,1],[4,4],[7,1]]
 
         int [][] r = new Solution().reconstructQueue(in);
-        Arrays.stream(r).forEach(x-> System.out.print(x[0]+" - "+x[1]+", "));
+        //Arrays.stream(r).forEach(x-> System.out.print(x[0]+" - "+x[1]+", "));
+
+        System.out.println("---");
+        int []arr = {1,2,6,3,4};
+        int [] arr1 = {1,2,4,1};
+
+        //arr = Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
+
+        //arr = Arrays.stream(arr).boxed().sorted(Comparator.reverseOrder()).mapToInt(Integer::intValue).toArray();
+        
+
+        Arrays.stream(arr).forEach(x-> System.out.print(x+" "));
+
     }
 
     public int[][] reconstructQueue(int[][] people) {
