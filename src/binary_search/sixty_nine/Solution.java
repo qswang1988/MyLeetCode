@@ -5,7 +5,6 @@ public class Solution {
         // 2147395599
         int r = new Solution().mySqrt(2147395599);
         System.out.println(r);
-
     }
 
     public int mySqrt(int x) {
@@ -18,7 +17,7 @@ public class Solution {
             long half = (right+left)/2;
             long product = half*half;
             //System.out.println("left: "+left+",right: "+right+",half: "+half+",product of half: "+product);
-             if(product == x)
+            if(product == x)
                 return (int)half;
             else if(product>x){
                 right = half;
