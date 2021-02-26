@@ -4,7 +4,7 @@ public class Solution2 {
 
     public static void main(String[] args) {
         //2147395599
-        int r = new Solution2().mySqrt(0);
+        int r = new Solution2().mySqrt(2147395599);
         System.out.println(r);
     }
 
