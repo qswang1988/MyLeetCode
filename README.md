@@ -1,2 +1,2 @@
 # MyLeetCode
-some exercise 
+some exercise in leetcode.com
