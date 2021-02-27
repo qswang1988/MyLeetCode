@@ -1,4 +1,4 @@
-package greedy.four_fortyfive;
+package greedy.four_fivetyfive;
 
 /*
 * Example 1:
