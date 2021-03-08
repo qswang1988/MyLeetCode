@@ -25,7 +25,6 @@ public class Solution {
         int right = nums.length - 1;
         int pos = 0;
         while (left <= right) {
-            //System.out.println(low+", "+high);
             if (nums[left] == target || nums[right] == target)
                 return true;
             if (nums[++left] < nums[left - 1]) {
@@ -57,10 +56,6 @@ public class Solution {
             else
                 left = half;
         }
-
-        if(left == right-1)
-            return nums[left]==target||nums[right]==target;
-
-        return false;
+        return nums[left]==target||nums[right]==target;
     }
 }
