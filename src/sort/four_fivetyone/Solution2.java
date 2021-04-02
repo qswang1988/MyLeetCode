@@ -20,13 +20,17 @@ public class Solution2 {
         for(char c:s.toCharArray())
             map [(int)c]++;
 
-        PriorityQueue<Integer> queue = new PriorityQueue<>(
+        /*PriorityQueue<Integer> queue = new PriorityQueue<>(
                 new Comparator<Integer>() {
                     @Override
                     public int compare(Integer o1, Integer o2) {
                         return map[o2] - map[o1];
                     }
                 }
+        );*/
+        //lambda
+        PriorityQueue<Integer> queue = new PriorityQueue<>(
+                (x,y)->map[y] - map [x]
         );
 
         int index = 0;
