@@ -100,23 +100,10 @@ public class Solution {
         int pivot = left;
         int index = pivot + 1;
         for (int i = index; i <= right; i++) {
-            //System.out.println("--------");
-            *//*for(int k:arr)
-                System.out.print(k+",");
-            System.out.println();
-            System.out.println("i: "+i);
-            System.out.println("index: "+index);
-            System.out.println("arr[i]: "+arr[i]);
-            System.out.println("arr[pivot]: "+arr[pivot]);
-            System.out.println("arr[index]: "+arr[index]);*//*
             if (arr[i] < arr[pivot]) {
-                //System.out.println("swaped");
                 swap(arr, i, index);
                 index++;
             }
-            *//*for(int k:arr)
-                System.out.print(k+",");
-            System.out.println();*//*
         }
         swap(arr, pivot, index - 1);
         return index - 1;
