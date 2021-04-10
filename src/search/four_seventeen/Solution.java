@@ -38,14 +38,8 @@ public class Solution {
 
         for(int i = 0;i<h;i++){
             for(int j = 0;j<w;j++){
-                if(pacific_map[i][j]==1&&atlantic_map[i][j]==1) {
-                    //list.add(List.of(i, j));
-                    List<Integer> list1 = new ArrayList<>();
-                    list1.add(i);
-                    list1.add(j);
-                    list.add(list1);
-
-                }
+                if(pacific_map[i][j]==1&&atlantic_map[i][j]==1)
+                    list.add(List.of(i, j));
             }
         }
 
