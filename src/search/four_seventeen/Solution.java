@@ -65,8 +65,6 @@ public class Solution {
             check_around(heights,map,w,h,row,col+1,row,col);
         if(down>=target)
             check_around(heights,map,w,h,row+1,col,row,col);
-
-        return;
     }
 
 
