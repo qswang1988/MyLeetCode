@@ -26,20 +26,20 @@ public class Solution {
         int h = heights.length;
         int [][] atlantic_map = new int [h][w];
         int [][] pacific_map = new int [h][w];
-
+        int [] direct = {-1,0,1,0,-1};
         for(int i = 0;i<h;i++) {
-            check_around(heights, atlantic_map, w, h, i, 0, -1, -1);
-            check_around(heights, pacific_map, w, h, i, w-1, -1, -1);
+            check_around(heights, direct,atlantic_map, w, h, i, 0);
+            check_around(heights, direct,pacific_map, w, h, i, w-1);
         }
         for(int i = 0;i<w;i++) {
-            check_around(heights, atlantic_map,w, h, 0, i, -1, -1);
-            check_around(heights, pacific_map, w, h, h-1, i, -1, -1);
+            check_around(heights, direct,atlantic_map,w, h, 0, i);
+            check_around(heights, direct,pacific_map, w, h, h-1, i);
         }
 
         for(int i = 0;i<h;i++){
             for(int j = 0;j<w;j++){
                 if(pacific_map[i][j]==1&&atlantic_map[i][j]==1)
-                    list.add(List.of(i, j));
+                    list.add(List.of(i,j));
             }
         }
 
@@ -48,23 +48,19 @@ public class Solution {
 
     // 1: Atlantic target
     // 2: Pacific  target
-    public void check_around(int[][] heights, int[][] map,int w, int h, int row, int col, int last_row,int last_col) {
+    public void check_around(int[][] heights, int [] direct,int[][] map,int w, int h, int row, int col) {
         //System.out.println("row: "+row+", col: "+col+", last_row:"+last_row+", last_col:"+last_col);
         int target = heights [row][col];
         map [row][col] = 1;
-        int top = ((row-1>=0)&&(map[row-1][col]!=1)&&((row-1!=last_row)||(col!=last_col)))?heights [row-1][col]:Integer.MIN_VALUE;
-        int left = ((col-1>=0)&&(map[row][col-1]!=1)&&((row!=last_row)||(col-1!=last_col)))?heights [row][col-1]:Integer.MIN_VALUE;
-        int right = ((col+1<w)&&(map[row][col+1]!=1)&&((row!=last_row)||(col+1!=last_col)))?heights [row][col+1]:Integer.MIN_VALUE;
-        int down = ((row+1<h)&&(map[row+1][col]!=1)&&((row+1!=last_row)||(col!=last_col)))?heights [row+1][col]:Integer.MIN_VALUE;
-
-        if(top>=target)
-            check_around(heights,map,w,h,row-1,col,row,col);
-        if(left>=target)
-            check_around(heights,map,w,h,row,col-1,row,col);
-        if(right>=target)
-            check_around(heights,map,w,h,row,col+1,row,col);
-        if(down>=target)
-            check_around(heights,map,w,h,row+1,col,row,col);
+        for(int i = 0;i<4;i++){
+            int X = row + direct [i];
+            int Y = col + direct [i+1];
+            if(X>=0&&X<h&&Y>=0&&Y<w&&map[X][Y]!=1) {
+                int next = heights[X][Y];
+                if (next >= target)
+                    check_around(heights, direct, map, w, h, X, Y);
+            }
+        }
     }
 
 
