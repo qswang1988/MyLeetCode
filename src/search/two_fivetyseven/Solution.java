@@ -1,4 +1,4 @@
-package greedy.two_fivetyseven;
+package search.two_fivetyseven;
 
 import java.util.ArrayList;
 import java.util.List;
