@@ -38,6 +38,7 @@ public class Solution {
         sb.append(root.val);
         TreeNode left = root.left;
         TreeNode right = root.right;
+        // left == null && right == null
         if(right==left) {
             list.add(sb.toString());
             return;
