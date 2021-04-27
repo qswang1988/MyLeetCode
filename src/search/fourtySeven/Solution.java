@@ -33,7 +33,9 @@ public class Solution {
             return;
         }
 
-        Set<Integer> set = new HashSet<>();
+        //Set<Integer> set = new HashSet<>();
+        // ArrayList is faster than HashSet in this case
+        List<Integer> set = new ArrayList<>();
         for (int i = pos; i < nums.length; i++) {
             if(!set.contains(nums [i])) {
                 int[] nums_ = Arrays.copyOf(nums, nums.length);
