@@ -18,6 +18,7 @@ public class Solution {
         int n = matrix [0].length;
         int max_wide = Math.min(m,n);
         int square = 0;
+
         // width of square, from 1 to ..
         for(int w = 1;w<=max_wide;w++){
             boolean flag = true;
@@ -25,7 +26,8 @@ public class Solution {
                 for(int j = 0;j<n;j++){
                     if(matrix[i][j]=='1'){
                         if(check_square(matrix,i,j,w)){
-                            square = Math.max(square,w*w);
+                            //square = Math.max(square,w*w);
+                            square = w*w;
                             flag = false;
                             break;
                         }
@@ -45,6 +47,7 @@ public class Solution {
             matrix [row][col] = '0';
             return false;
         }
+
 
         for(int i =row;i<(row+width);i++){
             for(int j=col;j<(col+width);j++){
