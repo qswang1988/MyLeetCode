@@ -17,8 +17,8 @@ public class Solution {
         int m = matrix.length;
         int n = matrix [0].length;
         int max_wide = Math.min(m,n);
-        int square = 0;
 
+        int square = 0;
         // width of square, from 1 to ..
         for(int w = 1;w<=max_wide;w++){
             boolean flag = true;
