@@ -22,7 +22,7 @@ public class Solution {
         // width of square, from 1 to ..
         for(int w = 1;w<=max_wide;w++){
             boolean flag = true;
-            for(int i = 0;i<m&&flag;i++ ){
+            for(int i = 0;i<m&&flag;i++){
                 for(int j = 0;j<n;j++){
                     if(matrix[i][j]=='1'){
                         if(check_square(matrix,i,j,w)){
@@ -43,11 +43,10 @@ public class Solution {
     }
 
     public boolean check_square(char [][] matrix, int row, int col, int width){
-        if(row+width>matrix.length || col+width>matrix[0].length) {
+        if(row+width>matrix.length||col+width>matrix[0].length) {
             matrix [row][col] = '0';
             return false;
         }
-
 
         for(int i =row;i<(row+width);i++){
             for(int j=col;j<(col+width);j++){
