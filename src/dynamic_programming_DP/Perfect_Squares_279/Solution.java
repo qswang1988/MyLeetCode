@@ -14,6 +14,7 @@ public class Solution {
 
     public int numSquares(int n) {
         List<Integer> list = new ArrayList<>();
+
         Map<Integer,Integer> map = new HashMap<>();
         int sqrt = (int)Math.sqrt(n+1);
         for(int i = 1;i<=sqrt+1;i++){
