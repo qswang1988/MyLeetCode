@@ -23,17 +23,13 @@ public class Solution {
     private Map<String,Integer> map;
     private Map<Integer,Integer> notfound;
     public boolean wordBreak(String s, List<String> wordDict) {
-        //StringBuilder sb = new StringBuilder(s);
         map = new HashMap<String,Integer>();
         notfound = new HashMap<>();
         int max_len = 0;
         for(String wd:wordDict){
-            if(wd.length()>max_len)
-                max_len = wd.length();
+            max_len = Math.max(max_len,wd.length());
             map.put(wd,0);
         }
-        //System.out.println("max_len: "+max_len);
-        //List<Boolean> rs = new ArrayList<>();
         wb(s,0,max_len);
         return wb;
     }
@@ -43,7 +39,6 @@ public class Solution {
             return;
         for(int i = start+1;i<=s.length()&&i<=start+max_len;i++){
             if (map.containsKey(s.substring(start,i))){
-                //String rest = s.substring(i,s.length());
                 if(i==s.length()) {
                     wb = true;
                     return;
