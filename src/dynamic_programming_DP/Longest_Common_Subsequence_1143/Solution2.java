@@ -29,18 +29,14 @@ public class Solution2 {
         int w = text1.length();
         int l = text2.length();
         int [][] dp = new int [w+1][l+1];
-        int lw = 0;
-        int ll = 0;
         for(int i = 0;i<w;i++){
             char cur = text1.charAt(i);
             for(int j = 0;j<l;j++){
-                if(text2.charAt(j)!=cur || (i<lw && j<ll) ){
+                if(text2.charAt(j)!=cur){
                     dp [i+1][j+1] = Math.max(dp [i+1][j],dp [i][j+1]);
                     continue;
                 }
                 dp[i+1][j+1] = dp [i][j] + 1;
-                lw = i+1;
-                ll = j+1;
             }
         }
         return dp [w][l];
