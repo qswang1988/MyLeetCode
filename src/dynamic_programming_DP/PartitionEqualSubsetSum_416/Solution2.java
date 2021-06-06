@@ -25,9 +25,9 @@ public class Solution2 {
 
          0 1 2 3 4 5 6 7 8 9 10 11
        0 y y
-       1 y y         y
-       2 y y         y
-       3 y y         y          y
+       1 y y       y y
+       2 y y       y y
+       3 y y       y y          y
 
 
 
