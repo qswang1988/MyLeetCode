@@ -20,6 +20,8 @@ public class Solution {
     public int minDistance(String word1, String word2) {
         int len1 = word1.length()+1;
         int len2 = word2.length()+1;
+        char [] word1_ = word1.toCharArray();
+        char [] word2_ = word2.toCharArray();
 
         int [][] dp = new int[len1][len2];
         //dp [0][0] = 0;
@@ -32,9 +34,10 @@ public class Solution {
         for(int i = 1;i<len1;i++){
             for(int j = 1;j<len2;j++){
                 int m = Math.min(dp[i-1][j],dp[i][j-1])+1;
-                m = Math.min(m,dp[i-1][j-1]+2);
+                //m = Math.min(m,dp[i-1][j-1]+2);
 
-                if(word1.charAt(i-1)==word2.charAt(j-1))
+                // char array performs better than word1.charAt(i-1)==word2.charAt(j-1)
+                if(word1_[i-1]==word2_[j-1])
                     m = Math.max(m-2,dp[i-1][j-1]);
 
                 dp [i][j] = m;
