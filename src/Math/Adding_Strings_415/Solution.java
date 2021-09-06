@@ -22,11 +22,8 @@ public class Solution {
             carry = sum/10;
         }
 
-        for(int i = count;i>=0;i--){
-            if(s[i]==0&&i==s.length-1)
-                continue;
+        for(int i = count-1;i>=0;i--)
             sb.append(s[i]);
-        }
 
         return sb.toString();
     }
