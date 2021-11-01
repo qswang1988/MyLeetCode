@@ -15,11 +15,13 @@ public class Solution {
     public static void main(String[] args) {
         String r = new Solution().convertToTitle(Integer.MAX_VALUE-1);
         System.out.println(r);
+
     }
 
 
     public String convertToTitle(int columnNumber) {
         char [] letters = {'/','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
         List<Character> list = new ArrayList<>();
         int c = columnNumber;
         while(c>26){
