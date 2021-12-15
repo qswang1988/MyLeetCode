@@ -22,16 +22,18 @@ public class Solution {
         Set<Integer> setSorted = new HashSet<>();
         Set<Integer> setArr = new HashSet<>();
         for(int i = 0;i<arr.length;i++){
+            if(sorted[i]==arr[i] && setArr.isEmpty()){
+                NumOfChunks++;
+                continue;
+            }
             setSorted.add(sorted[i]);
             setArr.add(arr[i]);
             if(setSorted.equals(setArr)){
                 NumOfChunks++;
                 setSorted.clear();
                 setArr.clear();
-
             }
         }
-
         return NumOfChunks == 0?1:NumOfChunks;
     }
 }
