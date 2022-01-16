@@ -30,7 +30,8 @@ public class Solution {
                 min = Math.min(min,f);
             }
             dp [i] = min==Integer.MAX_VALUE?0:min+1;
-
+            Arrays.stream(dp).forEach(x->System.out.print(x+", "));
+            System.out.println();
         }
 
         //Arrays.stream(dp).forEach(System.out::print);
