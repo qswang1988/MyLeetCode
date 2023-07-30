@@ -24,23 +24,45 @@ public class Solution {
         if(len<=2)
             return len;
         int max = 2;
-        for(int i = 0;i<len;i++){
+
+
+        double [][] k = new double [len][len];
+        Arrays.stream(k).forEach(a->Arrays.fill(a,Double.MIN_VALUE));
+
+        for(int i = 0;i<len - max;i++){
+
             int [] p1 = points [i]; // first point
+
             for(int j = i+1;j<len;j++){
                 int counts = 2;// at least 2
                 int [] p2 = points [j]; // second point
+
                 for(int m = j+1;m<len;m++){
                     int [] p3 = points [m]; // third point
+
                     double denominator = p3[0] - p2 [0] ;
                     double denominator_ = p3[0] - p1[0];
                     if(denominator_ == 0 && denominator == 0){
                         counts++;
                         continue;
                     }
-                    double nominator = p3 [1] - p2 [1];
-                    double nominator_ = p3 [1] - p1 [1];
-                    if(nominator/denominator == nominator_/denominator_)
+
+                    double k1,k2;
+                    if(k [m][j] != Integer.MIN_VALUE && k [m][i] == k [m][j]) {
                         counts++;
+                    }else {
+                        double nominator = p3[1] - p2[1];
+                        double nominator_ = p3[1] - p1[1];
+                        k1 = nominator / denominator;
+                        k2 = nominator_ / denominator_;
+
+                        k [m][i] = k2;
+                        k [m][j] = k1;
+
+                        if (k1 == k2) {
+                            counts++;
+                        }
+                    }
                 }
                 max = Integer.max(max,counts);
             }
