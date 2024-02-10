@@ -1,4 +1,4 @@
-package Divide_and_Conquer.Beautiful_Array_932;
+package divide_and_conquer.Beautiful_Array_932;
 
 /*
 *

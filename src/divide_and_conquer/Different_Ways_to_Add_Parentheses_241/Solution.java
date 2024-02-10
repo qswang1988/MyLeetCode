@@ -1,4 +1,4 @@
-package Divide_and_Conquer.Different_Ways_to_Add_Parentheses_241;
+package divide_and_conquer.Different_Ways_to_Add_Parentheses_241;
 
 /*
 *   https://leetcode.com/problems/different-ways-to-add-parentheses/
